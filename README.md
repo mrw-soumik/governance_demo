@@ -90,11 +90,3 @@ Open:
 ```bash
 pytest
 ```
-
-## Demo talking points
-
-- The code is small enough to understand quickly.
-- Ownership and review rules are visible in the repository.
-- Every push and pull request runs automated checks.
-- The remaining controls that live in GitHub settings are documented and can be
-  enabled before the presentation.

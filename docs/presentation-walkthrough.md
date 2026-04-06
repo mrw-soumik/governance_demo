@@ -19,3 +19,11 @@ The repository is intentionally small so the governance signals are easy to see:
 - review expectations
 - automated validation
 - lightweight but visible documentation
+
+## Suggested talk track
+
+- The codebase is small enough to understand quickly.
+- Ownership and review rules are visible in the repository.
+- Every push and pull request runs automated checks.
+- The remaining controls live in GitHub settings and can be shown separately if
+  needed.
