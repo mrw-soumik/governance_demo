@@ -34,7 +34,6 @@ sample startup project data:
 - Contribution and review expectations: [`CONTRIBUTING.md`](CONTRIBUTING.md)
 - Pull request checklist: [`.github/pull_request_template.md`](.github/pull_request_template.md)
 - Automated validation: [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
-- Dependency update automation: [`.github/dependabot.yml`](.github/dependabot.yml)
 - Security reporting guidance: [`SECURITY.md`](SECURITY.md)
 - Presentation and settings checklist: [`docs/github-governance-checklist.md`](docs/github-governance-checklist.md)
 
@@ -57,7 +56,6 @@ tests/
   test_main.py
 .github/
   CODEOWNERS
-  dependabot.yml
   pull_request_template.md
   workflows/
     ci.yml
