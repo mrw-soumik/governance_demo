@@ -1,70 +1,53 @@
-# Governance Demo – Startup Project Example
+# Governance Demo - Startup Project Example
 
-## Problem Statement
+A small FastAPI repository designed for presentations and training demos about
+development governance in early-stage startups.
 
-Early-stage startups often move fast and rely on contractors to build initial systems.
-That can create governance risks such as:
+## Why this repo exists
 
-- code stored in personal repositories
-- no clear ownership
-- manual deployment steps
-- limited documentation
-- heavy dependency on one developer
+Startups often move quickly, use contractors, and postpone process controls.
+That creates predictable risks:
 
-These risks make the system harder to maintain, scale, and transfer.
+- code lives in a personal account
+- ownership is unclear
+- changes are pushed without review
+- deployments depend on one developer
+- documentation is thin
 
-## Solution
+This repository turns those risks into something concrete that you can show:
+visible ownership metadata, review expectations, automated validation, and a
+small codebase that is easy to understand in a live demo.
 
-This repository demonstrates a small, well-governed startup-style backend project with:
+## What this project does
 
-- company-owned repository
-- visible version history
-- automated CI pipeline
-- clear project structure
-- simple documentation
+The app is intentionally small. It exposes a few FastAPI endpoints that return
+sample startup project data:
 
-The goal is to show how development governance reduces contractor risk.
+- `GET /` returns service metadata
+- `GET /health` returns a simple health response
+- `GET /projects` lists sample projects
+- `GET /projects?status=active` filters by project status
 
-## Project Overview
+## Governance controls included in the repo
 
-This is a small FastAPI service that manages a few sample startup projects.
+- Code ownership: [`.github/CODEOWNERS`](.github/CODEOWNERS)
+- Contribution and review expectations: [`CONTRIBUTING.md`](CONTRIBUTING.md)
+- Pull request checklist: [`.github/pull_request_template.md`](.github/pull_request_template.md)
+- Automated validation: [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
+- Security reporting guidance: [`SECURITY.md`](SECURITY.md)
+- Presentation and settings checklist: [`docs/github-governance-checklist.md`](docs/github-governance-checklist.md)
 
-### Features
-- health check endpoint
-- list projects endpoint
-- filter projects by status
-- automated tests
-- GitHub Actions CI workflow
+## Important accuracy note
 
-## API Endpoints
+This repository currently lives in a personal GitHub account. Before you
+present it as a company-owned engineering asset, transfer it to a GitHub
+organization or company-owned repository and apply the checklist in
+[`docs/github-governance-checklist.md`](docs/github-governance-checklist.md).
 
-### `GET /`
-Returns service information.
+That distinction matters. Governance claims should match the actual repository
+settings, not just the README text.
 
-### `GET /health`
-Returns service health.
-
-### `GET /projects`
-Returns all sample projects.
-
-### `GET /projects?status=active`
-Returns only projects matching a given status.
-
-## Governance Controls Demonstrated
-
-1. **Repository Ownership**  
-   The repository should be pushed to a company or organization GitHub account.
-
-2. **Version History**  
-   Every change is tracked through commits.
-
-3. **Automated Validation**  
-   Tests run automatically on every push through GitHub Actions.
-
-4. **Clear Documentation**  
-   The structure and purpose of the project are easy to understand.
-
-## Project Structure
+## Project structure
 
 ```text
 app/
@@ -72,13 +55,21 @@ app/
 tests/
   test_main.py
 .github/
+  CODEOWNERS
+  pull_request_template.md
   workflows/
     ci.yml
+docs/
+  github-governance-checklist.md
+  presentation-walkthrough.md
 requirements.txt
+pytest.ini
 README.md
+CONTRIBUTING.md
+SECURITY.md
 ```
 
-## Local Setup
+## Local setup
 
 ```bash
 python -m venv .venv
@@ -88,20 +79,20 @@ uvicorn app.main:app --reload
 ```
 
 Open:
+
 - http://127.0.0.1:8000/
 - http://127.0.0.1:8000/docs
 
-## Run Tests
+## Run tests
 
 ```bash
 pytest
 ```
 
-## Demo Purpose
+## Demo talking points
 
-Use this repository in presentations to show:
-
-- company ownership of code
-- commit history
-- CI pipeline
-- practical governance controls
+- The code is small enough to understand quickly.
+- Ownership and review rules are visible in the repository.
+- Every push and pull request runs automated checks.
+- The remaining controls that live in GitHub settings are documented and can be
+  enabled before the presentation.
