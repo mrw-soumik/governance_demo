@@ -3,3 +3,11 @@ __pycache__/
 .pytest_cache/
 *.pyc
 .env
+.deepeval/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+pytest-cache-files-*/
